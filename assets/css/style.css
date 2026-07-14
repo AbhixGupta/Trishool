@@ -382,13 +382,14 @@ body {
     z-index: 2;
 }
 
-/* Samurai Warrior Image */
+/* Samurai Warrior Image - Centered */
 .samurai-warrior {
     position: absolute;
-    right: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
-    width: 45%;
-    max-width: 600px;
+    width: 50%;
+    max-width: 700px;
     z-index: 10;
     animation: samuraiAppear 1.5s ease-out;
 }
@@ -501,138 +502,53 @@ body {
     padding: 2rem;
 }
 
-/* Japanese Seal Badge */
-.japanese-seal {
-    margin-bottom: 3rem;
+/* Simple Badge - No Japanese Characters */
+.hero-badge-simple {
     display: inline-block;
+    background: rgba(196, 30, 58, 0.1);
+    border: 2px solid var(--japanese-red);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
 }
 
-.seal-circle {
-    width: 120px;
-    height: 120px;
-    border: 3px solid var(--japanese-red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle, rgba(196, 30, 58, 0.1) 0%, transparent 70%);
-    position: relative;
-    animation: sealRotate 20s linear infinite;
-}
-
-.seal-circle::before {
-    content: '';
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    border-radius: 50%;
-}
-
-@keyframes sealRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.seal-inner {
-    text-align: center;
-    animation: sealStatic 20s linear infinite reverse;
-}
-
-@keyframes sealStatic {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
-}
-
-.seal-kanji {
-    display: block;
-    font-size: 3rem;
-    font-weight: 900;
+.hero-badge-simple span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
     color: var(--japanese-gold);
-    line-height: 1;
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
 
-.seal-text {
-    display: block;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    color: var(--japanese-white);
-    margin-top: 0.3rem;
-    font-weight: 600;
-}
-
-/* Japanese-Style Title */
-.japanese-title {
-    margin-bottom: 3rem;
-}
-
-.title-line-jp {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
-
-.jp-accent {
-    font-size: clamp(4rem, 8vw, 7rem);
-    font-weight: 900;
-    color: var(--japanese-gold);
-    text-shadow:
-        0 0 30px rgba(212, 175, 55, 0.6),
-        0 5px 20px rgba(0, 0, 0, 0.8);
-    line-height: 1;
-}
-
-.title-main {
+/* Simplified Title - No Japanese Characters */
+.hero-main-title-simple {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
-    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title-line-simple {
+    display: block;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: 8px;
     color: var(--japanese-white);
     text-shadow:
         0 2px 10px rgba(0, 0, 0, 0.8),
         0 0 20px rgba(196, 30, 58, 0.3);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
 }
 
-.title-main-big {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 12vw, 10rem);
+.title-highlight-simple {
+    display: block;
+    font-size: clamp(3.5rem, 10vw, 8rem);
     letter-spacing: 12px;
     background: linear-gradient(135deg, #c41e3a 0%, #d4af37 50%, #c41e3a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     filter: drop-shadow(0 0 40px rgba(196, 30, 58, 0.6));
-    display: block;
-    line-height: 0.9;
-}
-
-.title-highlight {
-    margin-bottom: 1.5rem;
-}
-
-.title-subtitle-jp {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.jp-stroke {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(196, 30, 58, 0.5);
-    text-stroke: 2px rgba(196, 30, 58, 0.5);
     line-height: 1;
-}
-
-.en-subtitle {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    letter-spacing: 4px;
-    color: var(--text-gray);
-    font-weight: 400;
 }
 
 .hero-subtitle-container {
@@ -1952,49 +1868,27 @@ section {
 
 @media (max-width: 768px) {
     .samurai-warrior {
-        width: 60%;
-        right: -5%;
-        opacity: 0.7;
+        width: 70%;
+        opacity: 0.8;
     }
 
-    .japanese-seal .seal-circle {
-        width: 90px;
-        height: 90px;
+    .hero-badge-simple {
+        padding: 0.6rem 1.5rem;
     }
 
-    .seal-kanji {
-        font-size: 2rem;
+    .hero-badge-simple span {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
     }
 
-    .seal-text {
-        font-size: 0.5rem;
-    }
-
-    .title-line-jp {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .jp-accent {
-        font-size: clamp(3rem, 10vw, 5rem);
-    }
-
-    .title-main {
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
-    }
-
-    .title-main-big {
-        font-size: clamp(3rem, 10vw, 6rem);
+    .title-line-simple {
+        font-size: clamp(2rem, 6vw, 3.5rem);
         letter-spacing: 4px;
     }
 
-    .jp-stroke {
-        font-size: clamp(2rem, 6vw, 3rem);
-    }
-
-    .en-subtitle {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
+    .title-highlight-simple {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+        letter-spacing: 6px;
     }
 
     .hero-subtitle-container {
