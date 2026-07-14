@@ -382,23 +382,24 @@ body {
     z-index: 2;
 }
 
-/* Samurai Warrior Image - Right Column (No Overlap) */
+/* Samurai Warrior Image - Right 60% (Jackie Style) */
 .samurai-warrior {
     position: relative;
     width: 100%;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
     z-index: 10;
-    animation: samuraiAppear 1.5s ease-out;
+    grid-column: 2;
 }
 
 .samurai-image {
     width: 100%;
+    max-width: 600px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.8))
-            drop-shadow(0 0 40px rgba(196, 30, 58, 0.3));
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.6))
+            drop-shadow(0 0 30px rgba(196, 30, 58, 0.3));
     animation: samuraiBreathe 4s ease-in-out infinite;
 }
 
@@ -493,18 +494,19 @@ body {
     z-index: 10;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 40% 60%;
+    gap: 60px;
     align-items: center;
     min-height: 100vh;
-    padding: 0 3%;
+    padding: 0 60px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .hero-left-content {
     text-align: left;
-    padding-right: 1rem;
+    max-width: 550px;
+    padding-right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
