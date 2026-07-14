@@ -68,10 +68,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-image {
-    height: 50px;
+    height: 55px;
     width: auto;
-    border-radius: 50%;
-    border: 2px solid var(--blood-red);
 }
 
 .logo h1 {
@@ -998,11 +996,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo {
-    height: 60px;
+    height: 70px;
     width: auto;
-    border-radius: 50%;
     margin-bottom: 15px;
-    border: 2px solid var(--blood-red);
 }
 
 .footer-col h3 {
@@ -1575,11 +1571,11 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo-image {
-        height: 40px;
+        height: 45px;
     }
 
     .logo h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
