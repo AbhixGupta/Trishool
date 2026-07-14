@@ -14,7 +14,8 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <h1><span class="logo-icon">⚡</span> TRISHOOL MMA</h1>
+                    <img src="assets/images/logo.jpg" alt="Trishool MMA" class="logo-image">
+                    <h1>TRISHOOL MMA</h1>
                 </div>
                 <nav class="nav-menu" id="navMenu">
                     <a href="#classes" class="nav-link">Classes</a>
@@ -143,7 +144,7 @@
                         </div>
                     </div>
                     <div class="coach-details">
-                        <h3 class="coach-name">COACH RAHUL</h3>
+                        <h3 class="coach-name">TRIBHUVAN RAWAT</h3>
                         <p class="coach-title-main">HEAD COACH & FORMER PRO FIGHTER</p>
                         <div class="coach-stats-bar">
                             <div class="stat-box">
@@ -220,51 +221,89 @@
                 <h2 class="section-title">TRAINING SCHEDULE</h2>
                 <p class="section-subtitle">Your Week of Warriors</p>
             </div>
-            <div class="schedule-table">
-                <div class="schedule-header">
-                    <div class="schedule-col">TIME</div>
-                    <div class="schedule-col">MONDAY</div>
-                    <div class="schedule-col">TUESDAY</div>
-                    <div class="schedule-col">WEDNESDAY</div>
-                    <div class="schedule-col">THURSDAY</div>
-                    <div class="schedule-col">FRIDAY</div>
-                    <div class="schedule-col">SATURDAY</div>
+
+            <div class="schedule-cards-grid">
+                <!-- Morning Classes -->
+                <div class="schedule-card-new">
+                    <h3 class="schedule-card-title">MORNING SESSIONS</h3>
+                    <p class="schedule-card-subtitle">Mon – Fri</p>
+                    <ul class="schedule-list-new">
+                        <li>
+                            <span class="class-name">MMA</span>
+                            <span class="class-info">
+                                <span class="class-level beg-int">Beg / Int</span>
+                                <span class="class-time">6:30 – 7:30 AM</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="class-name">MMA</span>
+                            <span class="class-info">
+                                <span class="class-level all-levels">All Levels</span>
+                                <span class="class-time">7:30 – 8:30 AM</span>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-time">06:00 AM</div>
-                    <div class="schedule-class mma">MMA Fundamentals</div>
-                    <div class="schedule-class bjj">BJJ Basics</div>
-                    <div class="schedule-class mma">MMA Fundamentals</div>
-                    <div class="schedule-class bjj">BJJ Basics</div>
-                    <div class="schedule-class mma">MMA Fundamentals</div>
-                    <div class="schedule-class strength">Open Mat</div>
+
+                <!-- Evening Classes -->
+                <div class="schedule-card-new">
+                    <h3 class="schedule-card-title">EVENING SESSIONS</h3>
+                    <p class="schedule-card-subtitle">Mon – Fri</p>
+                    <ul class="schedule-list-new">
+                        <li>
+                            <span class="class-name">Fighters Training</span>
+                            <span class="class-info">
+                                <span class="class-level advanced">Advanced</span>
+                                <span class="class-time">4:00 – 5:00 PM</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="class-name">Grappling (Judo / BJJ)</span>
+                            <span class="class-info">
+                                <span class="class-level all-levels">All</span>
+                                <span class="class-time">5:00 – 6:00 PM</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="class-name">Kickboxing / Boxing</span>
+                            <span class="class-info">
+                                <span class="class-level beg-int">Beg / Int</span>
+                                <span class="class-time">6:00 – 7:00 PM</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="class-name">MMA</span>
+                            <span class="class-info">
+                                <span class="class-level beg-int">Beg / Int</span>
+                                <span class="class-time">7:00 – 8:00 PM</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="class-name">Muay Thai</span>
+                            <span class="class-info">
+                                <span class="class-level beg-int">Beg / Int</span>
+                                <span class="class-time">8:00 – 9:00 PM</span>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="schedule-row">
-                    <div class="schedule-time">07:30 AM</div>
-                    <div class="schedule-class strength">S&C</div>
-                    <div class="schedule-class muaythai">Muay Thai</div>
-                    <div class="schedule-class strength">S&C</div>
-                    <div class="schedule-class muaythai">Muay Thai</div>
-                    <div class="schedule-class strength">S&C</div>
-                    <div class="schedule-class mma">Sparring</div>
-                </div>
-                <div class="schedule-row">
-                    <div class="schedule-time">06:00 PM</div>
-                    <div class="schedule-class muaythai">Muay Thai Advanced</div>
-                    <div class="schedule-class mma">MMA Advanced</div>
-                    <div class="schedule-class muaythai">Muay Thai Advanced</div>
-                    <div class="schedule-class mma">MMA Advanced</div>
-                    <div class="schedule-class muaythai">Muay Thai Advanced</div>
-                    <div class="schedule-class bjj">BJJ Open Mat</div>
-                </div>
-                <div class="schedule-row">
-                    <div class="schedule-time">07:30 PM</div>
-                    <div class="schedule-class bjj">BJJ Advanced</div>
-                    <div class="schedule-class bjj">BJJ Advanced</div>
-                    <div class="schedule-class bjj">BJJ Advanced</div>
-                    <div class="schedule-class bjj">BJJ Advanced</div>
-                    <div class="schedule-class mma">MMA Sparring</div>
-                    <div class="schedule-class strength">Fight Night</div>
+
+                <!-- Weekend Classes -->
+                <div class="schedule-card-new">
+                    <h3 class="schedule-card-title">WEEKEND</h3>
+                    <p class="schedule-card-subtitle">Sunday</p>
+                    <ul class="schedule-list-new">
+                        <li>
+                            <span class="class-name">Open Mat</span>
+                            <span class="class-info">
+                                <span class="class-level all-levels">All</span>
+                                <span class="class-time">7:00 AM – 12:00 PM</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="schedule-note">
+                        <i class="fas fa-info-circle"></i> Schedule may vary. Contact us to confirm current timings and available slots.
+                    </div>
                 </div>
             </div>
         </div>
@@ -427,15 +466,16 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3><span class="logo-icon">⚡</span> TRISHOOL MMA</h3>
+                    <img src="assets/images/logo.jpg" alt="Trishool MMA" class="footer-logo">
+                    <h3>TRISHOOL MMA & FITNESS CLUB</h3>
                     <p>Dehradun's most intense combat sports academy. We don't just teach fighting - we forge champions.</p>
                     <div class="footer-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Rajpur Road, Dehradun<br>Uttarakhand, India</span>
+                        <span>Plot No. 121, Suri Chowk, Race Course<br>Amaya Towers, Subhash Nagar<br>Dehradun, Uttarakhand - 248001</span>
                     </div>
                     <div class="footer-contact">
                         <i class="fas fa-phone"></i>
-                        <span>+91 98765 43210</span>
+                        <span><a href="tel:9760268266">+91 97602 68266</a> | <a href="tel:8126657726">+91 81266 57726</a></span>
                     </div>
                 </div>
                 <div class="footer-col">
