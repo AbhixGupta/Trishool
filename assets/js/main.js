@@ -47,15 +47,22 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Animated counter for stats
-const animateCounter = (element, target, duration = 2000) => {
+// Animated counter for stats with easing
+const animateCounter = (element, target, duration = 2500) => {
     let start = 0;
-    const increment = target / (duration / 16);
+    const startTime = Date.now();
+
+    const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
 
     const updateCounter = () => {
-        start += increment;
-        if (start < target) {
-            element.textContent = Math.floor(start);
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutQuart(progress);
+
+        const current = Math.floor(easedProgress * target);
+        element.textContent = current;
+
+        if (progress < 1) {
             requestAnimationFrame(updateCounter);
         } else {
             element.textContent = target;
@@ -77,11 +84,11 @@ const statsObserver = new IntersectionObserver((entries) => {
             statsObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
+const heroStatsContainer = document.querySelector('.hero-stats-container');
+if (heroStatsContainer) {
+    statsObserver.observe(heroStatsContainer);
 }
 
 // Particles animation
@@ -201,20 +208,57 @@ revealElements.forEach(el => {
     revealObserver.observe(el);
 });
 
-// Add parallax effect to hero section
+// Enhanced parallax effect for hero section
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    const heroBackground = document.querySelector('.hero-background');
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            const heroBackground = document.querySelector('.hero-background');
+            const geometricShapes = document.querySelector('.geometric-shapes');
+            const heroGlow = document.querySelector('.hero-glow-effect');
 
-    if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroContent.style.opacity = 1 - scrolled / 800;
-    }
+            if (scrolled < window.innerHeight) {
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.4}px)`;
+                    heroContent.style.opacity = 1 - scrolled / 700;
+                }
 
-    if (heroBackground && scrolled < window.innerHeight) {
-        heroBackground.style.transform = `translateY(${scrolled * 0.3}px)`;
+                if (heroBackground) {
+                    heroBackground.style.transform = `translateY(${scrolled * 0.2}px)`;
+                }
+
+                if (geometricShapes) {
+                    geometricShapes.style.transform = `translateY(${scrolled * 0.15}px) rotate(${scrolled * 0.05}deg)`;
+                }
+
+                if (heroGlow) {
+                    heroGlow.style.opacity = 0.5 - scrolled / 1000;
+                }
+            }
+
+            ticking = false;
+        });
+
+        ticking = true;
     }
+});
+
+// Add mouse move parallax effect
+document.addEventListener('mousemove', (e) => {
+    const shapes = document.querySelectorAll('.shape');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+
+    shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 20;
+        const x = (mouseX - 0.5) * speed;
+        const y = (mouseY - 0.5) * speed;
+
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+    });
 });
 
 // Add cursor trail effect (optional enhancement)
