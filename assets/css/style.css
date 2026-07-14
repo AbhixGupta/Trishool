@@ -672,9 +672,116 @@ section {
     color: var(--primary-color);
 }
 
+/* Schedule Section */
+.schedule {
+    background: var(--secondary-color);
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.schedule-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.schedule-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-1);
+}
+
+.schedule-header {
+    background: var(--gradient-1);
+    padding: 1.5rem 2rem;
+}
+
+.schedule-header h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.schedule-list {
+    list-style: none;
+    padding: 1.5rem 2rem;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.schedule-class {
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+}
+
+.schedule-time {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.schedule-level {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.level-all {
+    background: rgba(201, 168, 76, 0.15);
+    color: var(--accent-color);
+}
+
+.level-adv {
+    background: rgba(192, 57, 43, 0.15);
+    color: #e74c3c;
+}
+
+.level-beg {
+    background: rgba(52, 152, 219, 0.15);
+    color: #5dade2;
+}
+
+.schedule-note {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
 /* Trainers Section */
 .trainers {
-    background: var(--secondary-color);
+    background: var(--dark-bg);
 }
 
 .trainers-grid {
@@ -1090,12 +1197,20 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
     }
 
     .nav-cta {
         display: none;
+    }
+
+    .map-container > div {
+        grid-template-columns: 1fr !important;
     }
 }
 
