@@ -493,18 +493,21 @@ body {
     z-index: 10;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
     align-items: center;
     min-height: 100vh;
-    padding: 0 5%;
-    max-width: 1600px;
+    padding: 0 3%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .hero-left-content {
     text-align: left;
-    padding-right: 2rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Left Side Badge - Clean & Professional */
@@ -532,34 +535,25 @@ body {
     text-transform: uppercase;
 }
 
-/* Left-Aligned Title - Professional & Readable */
+/* Left-Aligned Title - Fixed, No Animation */
 .hero-title-left {
     font-family: 'Bebas Neue', sans-serif;
-    margin-bottom: 2rem;
-    line-height: 1;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
 .title-top {
     display: block;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    letter-spacing: 4px;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    letter-spacing: 3px;
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 0.3rem;
-}
-
-.title-main-left {
-    display: block;
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    letter-spacing: 8px;
-    color: var(--japanese-white);
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .title-highlight-left {
     display: block;
-    font-size: clamp(4rem, 9vw, 8rem);
-    letter-spacing: 10px;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    letter-spacing: 6px;
     background: linear-gradient(135deg, #c41e3a 0%, #d4af37 50%, #c41e3a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -568,11 +562,11 @@ body {
 }
 
 .hero-subtitle-left {
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 2.5rem;
-    max-width: 500px;
+    margin-bottom: 2rem;
+    max-width: 450px;
 }
 
 .hero-buttons-left {
@@ -1939,11 +1933,44 @@ section {
     }
 }
 
+/* 13" Laptop and smaller (1280px) */
+@media (max-width: 1366px) {
+    .hero-container {
+        grid-template-columns: 1fr 0.9fr;
+        gap: 1.5rem;
+        padding: 0 2%;
+    }
+
+    .title-top {
+        font-size: clamp(1.3rem, 2vw, 1.8rem);
+    }
+
+    .title-highlight-left {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle-left {
+        font-size: 0.95rem;
+    }
+
+    .btn-hero-left {
+        padding: 1rem 2rem;
+        font-size: 0.85rem;
+    }
+
+    .stat-num {
+        font-size: 2.5rem;
+    }
+}
+
+/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 2rem;
+        min-height: auto;
     }
 
     .hero-left-content {
@@ -1953,7 +1980,7 @@ section {
 
     .samurai-warrior {
         order: -1;
-        max-width: 500px;
+        max-width: 400px;
         margin: 0 auto;
     }
 
@@ -1968,6 +1995,15 @@ section {
     .hero-stats-left {
         justify-content: center;
     }
+
+    .title-top {
+        font-size: 1.5rem;
+    }
+
+    .title-highlight-left {
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+    }
+}
 
     .coach-spotlight-grid {
         grid-template-columns: 1fr;
