@@ -382,13 +382,13 @@ body {
     z-index: 2;
 }
 
-/* Samurai Warrior Image - Right Side */
+/* Samurai Warrior Image - Right Column (No Overlap) */
 .samurai-warrior {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 45%;
-    max-width: 650px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     z-index: 10;
     animation: samuraiAppear 1.5s ease-out;
 }
@@ -492,17 +492,19 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
     min-height: 100vh;
     padding: 0 5%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .hero-left-content {
-    flex: 0 0 55%;
-    max-width: 700px;
-    padding-right: 3rem;
     text-align: left;
+    padding-right: 2rem;
 }
 
 /* Left Side Badge - Clean & Professional */
@@ -1939,23 +1941,20 @@ section {
 
 @media (max-width: 1024px) {
     .hero-container {
-        flex-direction: column;
-        justify-content: center;
+        grid-template-columns: 1fr;
+        gap: 2rem;
         padding: 2rem;
     }
 
     .hero-left-content {
-        flex: 1;
-        max-width: 100%;
         padding-right: 0;
         text-align: center;
-        z-index: 15;
     }
 
     .samurai-warrior {
-        width: 50%;
-        right: 5%;
-        opacity: 0.6;
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .hero-badge-clean {
@@ -1991,9 +1990,7 @@ section {
 
 @media (max-width: 768px) {
     .samurai-warrior {
-        width: 60%;
-        right: 0;
-        opacity: 0.5;
+        max-width: 350px;
     }
 
     .badge-text-clean {
